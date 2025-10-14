@@ -57,6 +57,27 @@ Scope mínimo requerido para acceder a GitHub Copilot.
 Fuente: proxy_original.py línea 49
 """
 
+OAUTH_DEVICE_CODE_URL: Final[str] = "https://github.com/login/device/code"
+"""
+URL para solicitar código de dispositivo en OAuth Device Flow.
+Paso 1 del flujo: obtener device_code y user_code.
+Fuente: https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps#device-flow
+"""
+
+OAUTH_TOKEN_URL: Final[str] = "https://github.com/login/oauth/access_token"
+"""
+URL para intercambiar código de dispositivo por access_token.
+Paso 3 del flujo: polling hasta que usuario autorice.
+Fuente: https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps#device-flow
+"""
+
+OAUTH_VERIFICATION_URL: Final[str] = "https://github.com/login/device"
+"""
+URL donde el usuario debe ingresar el user_code.
+Paso 2 del flujo: usuario ingresa código manualmente.
+Fuente: https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps#device-flow
+"""
+
 
 # ============================================================================
 # CONFIGURACIÓN API - GitHub Copilot

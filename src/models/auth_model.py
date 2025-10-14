@@ -191,6 +191,16 @@ class AuthModel:
         with self._lock:
             return len(self._accounts)
     
+    def get_all_accounts(self) -> dict[str, dict]:
+        """
+        Obtiene una copia de todas las cuentas registradas.
+        
+        Returns:
+            Diccionario con todas las cuentas {token: account_info}
+        """
+        with self._lock:
+            return self._accounts.copy()
+    
     def _validate_token(self, token: str) -> None:
         """
         Valida el formato de un token de GitHub.
