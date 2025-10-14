@@ -237,3 +237,6 @@ $RECYCLE.BIN/
 .directory
 .Trash-*
 .nfs*
+
+# Ignore the ticket registry file
+Registro de tickets
